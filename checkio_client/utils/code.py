@@ -59,6 +59,7 @@ def gen_filename(slug, station, folder=None):
     domain_data = conf.default_domain_data
     if folder is None:
         folder = domain_data.get('solutions')
+    station = station or 'Old'
     return os.path.join(folder, station, slug.replace('-', '_') + '.' + domain_data['extension'])
 
 def gen_env_line(slug):
